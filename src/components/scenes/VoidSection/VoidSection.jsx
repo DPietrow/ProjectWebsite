@@ -30,7 +30,7 @@ export default function VoidSection() {
                 </header>
 
                 <div className="constellation-wrapper">
-
+                
                     <HUDGrid />
                     <StarField />
 
