@@ -84,22 +84,16 @@
 }
 
 .star-title {
-    font-size: 10px;          /* FIX: DO NOT use rem in SVG */
+    font-size: 4px;
     letter-spacing: 0.35em;
-    font-weight: 600;
-    color: #fff;
+    fill: white;
     text-transform: uppercase;
-
-    white-space: nowrap;
 }
 
 .star-subtitle {
-    font-size: 9px;           /* FIX */
-    opacity: 0.55;
-    margin-top: 2px;
+    font-size: 3px;
     letter-spacing: 0.1em;
-
-    white-space: nowrap;
+    fill: rgba(255,255,255,0.6);
 }
 
 /* =========================
@@ -119,12 +113,12 @@
 @media (max-width: 768px) {
 
     .star-title {
-        font-size: 0.42rem;
-        letter-spacing: 0.25em;
+        font-size: 3.5px;
+        letter-spacing: 0.3em;
     }
 
     .star-subtitle {
-        font-size: 0.38rem;
+        font-size: 3px;
     }
 
     .star-label-box {
@@ -132,8 +126,4 @@
         height: 16px;
     }
 
-    .star-label-box {
-        transform-box: fill-box;
-        transform-origin: center;
-    }
 }

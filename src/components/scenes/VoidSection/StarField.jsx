@@ -61,82 +61,53 @@ export default function StarField() {
             {stars.map((s) => (
                 <g
                     key={s.id}
+                    className="star-node"
                     transform={`translate(${s.x}, ${s.y})`}
                     onClick={() => navigate(s.id)}
-                    className="star-node"
                 >
+                {/* glow */}
+                <circle r="18" fill="rgba(255,220,160,0.12)" />
+                        
+                {/* ring */}
+                <circle r="9" fill="none" stroke="rgba(255,220,160,0.4)" />
+                        
+                {/* core star */}
+                <polygon
+                    points="
+                        0,-10
+                        2.5,-3
+                        10,-3
+                        4,2
+                        6,10
+                        0,5
+                        -6,10
+                        -4,2
+                        -10,-3
+                        -2.5,-3
+                    "
+                    fill="#fff"
+                    filter="drop-shadow(0 0 6px rgba(255,220,160,0.8))"
+                />
 
-                    {/* TRUE CINEMATIC STAR (NOT A CIRCLE) */}
-                    <g className="star-core"transform="scale(1.5)">
-
-                        {/* outer glow bloom */}
-                        <circle
-                            r="18"
-                            fill="rgba(255, 220, 160, 0.10)"
-                        />
-
-                        {/* soft halo ring */}
-                        <circle
-                            r="10"
-                            fill="none"
-                            stroke="rgba(255, 220, 160, 0.45)"
-                            strokeWidth="0.4"
-                        />
-
-                        {/* vertical flare */}
-                        <line
-                            x1="0"
-                            y1="-14"
-                            x2="0"
-                            y2="14"
-                            stroke="rgba(255, 240, 200, 0.8)"
-                            strokeWidth="0.6"
-                            strokeLinecap="round"
-                        />
-
-                        {/* horizontal flare */}
-                        <line
-                            x1="-14"
-                            y1="0"
-                            x2="14"
-                            y2="0"
-                            stroke="rgba(255, 240, 200, 0.8)"
-                            strokeWidth="0.6"
-                            strokeLinecap="round"
-                        />
-
-                        {/* core star (actual point light) */}
-                        <circle
-                            r="2.4"
-                            fill="#ffffff"
-                        />
-
-                        {/* inner glow pulse */}
-                        <circle
-                            r="5"
-                            fill="rgba(255, 220, 160, 0.25)"
-                        />
-
-                    </g>
-
-                    <circle r="18" className="star-glow" />
-                    <circle r="8" className="star-ring" />
-
-                    {/* LABELS */}
-                    <foreignObject 
-                        x="-60"
-                        y="20"
-                        width="120"
-                        height="60"
-                        className="star-label-box"
-                    >
-                        <div xmlns="http://www.w3.org/1999/xhtml" className="star-label">
-                            <div className="star-title">{s.title}</div>
-                            <div className="star-subtitle">{s.subtitle}</div>
-                        </div>
-                    </foreignObject>
-
-                </g>
+                {/* LABEL (SVG TEXT — NOT HTML) */}
+                <text
+                    x="0"
+                    y="28"
+                    textAnchor="middle"
+                    className="star-title"
+                >
+                    {s.title}
+                </text>
+                        
+                <text
+                    x="0"
+                    y="40"
+                    textAnchor="middle"
+                    className="star-subtitle"
+                >
+                    {s.subtitle}
+                </text>
+            </g>
             ))}
 
         </svg>
