@@ -124,13 +124,13 @@ export default function StarField() {
 
                     {/* LABELS */}
                     <foreignObject 
-                            x="-20"
-                            y="12"
-                            width="40"
-                            height="20"
-                            className="star-label-box"
+                        x="-60"
+                        y="20"
+                        width="120"
+                        height="60"
+                        className="star-label-box"
                     >
-                        <div className="star-label">
+                        <div xmlns="http://www.w3.org/1999/xhtml" className="star-label">
                             <div className="star-title">{s.title}</div>
                             <div className="star-subtitle">{s.subtitle}</div>
                         </div>

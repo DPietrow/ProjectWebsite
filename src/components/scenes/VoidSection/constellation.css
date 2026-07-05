@@ -69,33 +69,36 @@
 ========================= */
 
 .star-label {
-    text-align: center;
-    font-family: Inter, system-ui, sans-serif;
+    position: relative;
+    width: 100%;
+    height: 100%;
 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
 
-    line-height: 1.1;
+    text-align: center;
 
-    transform: translateX(0);
+    transform: translateY(6px); /* small breathing room */
 }
 
 .star-title {
-    font-size: 0.55rem; /* FIX: was 14px = too large */
-    letter-spacing: 0.32em;
+    font-size: 10px;          /* FIX: DO NOT use rem in SVG */
+    letter-spacing: 0.35em;
     font-weight: 600;
-    color: white;
+    color: #fff;
     text-transform: uppercase;
 
     white-space: nowrap;
 }
 
 .star-subtitle {
-    font-size: 0.5rem; /* FIX */
+    font-size: 9px;           /* FIX */
     opacity: 0.55;
     margin-top: 2px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+
     white-space: nowrap;
 }
 
@@ -127,5 +130,10 @@
     .star-label-box {
         width: 34px;
         height: 16px;
+    }
+
+    .star-label-box {
+        transform-box: fill-box;
+        transform-origin: center;
     }
 }
