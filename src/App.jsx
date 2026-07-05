@@ -1,5 +1,4 @@
 import Universe from "./components/Universe/Universe";
-import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import ApolloSection from "./components/scenes/ApolloSection";
 import AphroditeSection from "./components/scenes/AphroditeSection";
@@ -14,7 +13,7 @@ function App() {
     return (
         <>
             <Universe />
-            <Navbar />
+
 
             <main     
                 className="app-content"

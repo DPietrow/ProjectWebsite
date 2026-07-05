@@ -87,6 +87,7 @@
 
 /* CONSTELLATION AREA */
 .constellation-wrapper {
+    
     position: relative;
     width: min(920px, 92vw);
     aspect-ratio: 1;

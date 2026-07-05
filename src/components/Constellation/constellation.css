@@ -1,159 +1,143 @@
-.constellation {
+/* ==========================================================
+   CONSTELLATION CORE
+========================================================== */
 
+.constellation-wrapper {
     position: relative;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 10rem 8vw;
-
+    width: min(920px, 92vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+    overflow: visible;
 }
 
-.constellation-content {
-
+.constellation-board {
+    position: relative;
     width: 100%;
-
-    max-width: 1100px;
-
-    display: grid;
-
-    grid-template-columns: 140px 1fr;
-
-    gap: 6rem;
-
-    align-items: center;
+    height: 100%;
 }
 
-/* ---------- Star ---------- */
+/* ==========================================================
+   SVG LINES
+========================================================== */
 
-.constellation-node {
+.constellation-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
 
-    position: relative;
+.constellation-line {
+    fill: none;
+    stroke: rgba(220,184,128,0.45);
+    stroke-width: 1.2; /* scaled for 1000x viewBox */
+    stroke-linecap: round;
+}
 
-    width: 120px;
+/* ==========================================================
+   COMPASS (FIX OVERLAP)
+========================================================== */
 
-    height: 120px;
+.compass {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.compass .south {
+    bottom: 60px; /* FIX ARTemis overlap */
+}
+
+/* ==========================================================
+   STAR SYSTEM (CLEAN + STABLE)
+========================================================== */
+
+.project-star {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    all: unset;
+    cursor: pointer;
 
     display: flex;
-
-    justify-content: center;
-
+    flex-direction: column;
     align-items: center;
 }
 
-.node-glow {
+/* STAR WRAPPER */
+.star-visual {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    display: grid;
+    place-items: center;
+}
 
+/* GLOW */
+.star-glow {
     position: absolute;
-
-    width: 110px;
-
-    height: 110px;
-
+    inset: 0;
     border-radius: 50%;
-
     background: radial-gradient(
-        rgba(126,200,255,.25),
+        circle,
+        rgba(255,220,160,0.35),
         transparent 70%
     );
-
-    animation: pulse 5s ease-in-out infinite;
+    pointer-events: none;
 }
 
-.node-star {
-
-    width: 10px;
-
-    height: 10px;
-
+/* CORE STAR (REAL STAR LOOK) */
+.star-core {
+    position: relative;
+    width: 6px;
+    height: 6px;
+    background: #fff;
     border-radius: 50%;
-
-    background: white;
-
     box-shadow:
-        0 0 18px white,
-        0 0 40px rgba(126,200,255,.4);
+        0 0 8px #fff,
+        0 0 20px rgba(255,220,160,0.9),
+        0 0 40px rgba(255,200,120,0.3);
 }
 
-/* ---------- Copy ---------- */
-
-.constellation-label {
-
-    display: block;
-
-    margin-bottom: 1rem;
-
-    color: var(--accent);
-
-    letter-spacing: .25em;
-
-    font-size: .75rem;
-
-    opacity: .7;
+/* STAR “SPIKE” STAR SHAPE (THIS IS WHAT YOU WERE MISSING) */
+.star-core::before,
+.star-core::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 26px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.9),
+        transparent
+    );
+    transform: translate(-50%, -50%);
 }
 
-.constellation h2 {
-
-    font-size: clamp(3rem,5vw,4rem);
-
-    font-weight: 500;
-
-    margin-bottom: 2rem;
+.star-core::after {
+    transform: translate(-50%, -50%) rotate(90deg);
 }
 
-.constellation p {
-
-    max-width: 40rem;
-
-    color: var(--muted);
-
-    line-height: 1.9;
-
-    font-size: 1.2rem;
+/* LABEL */
+.star-label {
+    margin-top: 10px;
+    text-align: center;
 }
 
-/* ---------- Animation ---------- */
-
-@keyframes pulse {
-
-    0% {
-
-        transform: scale(.9);
-
-        opacity: .25;
-
-    }
-
-    50% {
-
-        transform: scale(1.15);
-
-        opacity: .5;
-
-    }
-
-    100% {
-
-        transform: scale(.9);
-
-        opacity: .25;
-
-    }
-
+.star-label h3 {
+    color: #fff;
+    font-size: 0.8rem;
+    letter-spacing: 0.28em;
 }
 
-@media (max-width:900px){
-
-    .constellation-content{
-
-        grid-template-columns:1fr;
-
-        gap:3rem;
-
-    }
-
+.star-label p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.72rem;
 }

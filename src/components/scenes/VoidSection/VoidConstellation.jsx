@@ -1,191 +1,84 @@
-import "./void-layout.css";
 import "./constellation.css";
-import "./background.css";
-import "./contact.css";
-import "./animations.css";
 
 const stars = [
-
-    {
-        id: "apollo",
-        title: "APOLLO",
-        subtitle: "RAG Assistant",
-        x: 50,
-        y: 17,
-        north: true
-    },
-
-    {
-        id: "observatory",
-        title: "OBSERVATORY",
-        subtitle: "Intro",
-        x: 22,
-        y: 36
-    },
-
-    {
-        id: "aphrodite",
-        title: "APHRODITE",
-        subtitle: "Energy Forecasting",
-        x: 78,
-        y: 36
-    },
-
-    {
-        id: "ares",
-        title: "ARES",
-        subtitle: "Real Estate Model",
-        x: 17,
-        y: 72
-    },
-
-    {
-        id: "athena",
-        title: "ATHENA",
-        subtitle: "Upcoming",
-        x: 83,
-        y: 72
-    },
-
-    {
-        id: "artemis",
-        title: "ARTEMIS",
-        subtitle: "Upcoming",
-        x: 50,
-        y: 92
-    }
-
+    { id: "apollo", x: 500, y: 170 },
+    { id: "observatory", x: 220, y: 360 },
+    { id: "aphrodite", x: 780, y: 360 },
+    { id: "ares", x: 170, y: 720 },
+    { id: "athena", x: 830, y: 720 },
+    { id: "artemis", x: 500, y: 920 }
 ];
 
 const lines = [
-
-    ["apollo","observatory"],
-    ["apollo","aphrodite"],
-
-    ["observatory","ares"],
-    ["aphrodite","athena"],
-
-    ["ares","artemis"],
-    ["athena","artemis"],
-
-    ["observatory","center"],
-    ["aphrodite","center"],
-
-    ["ares","center"],
-    ["athena","center"],
-
-    ["center","artemis"]
-
+    ["apollo", "observatory"],
+    ["apollo", "aphrodite"],
+    ["observatory", "ares"],
+    ["aphrodite", "athena"],
+    ["ares", "artemis"],
+    ["athena", "artemis"]
 ];
 
-function position(id) {
-    if (id === "center") return { x: 50, y: 54 };
-
-    const found = stars.find(s => s.id === id);
-    return found || { x: 50, y: 50 }; // prevents undefined crash
+function pos(id) {
+    return stars.find(s => s.id === id);
 }
 
-export default function VoidConstellation(){
+export default function VoidConstellation() {
 
-    function navigate(id){
-
+    function navigate(id) {
         document.getElementById(id)?.scrollIntoView({
-
-            behavior:"smooth",
-            block:"start"
-
+            behavior: "smooth",
+            block: "start"
         });
-
     }
 
-    return(
-
-        <div className="constellation-board">
-
-            {/* Geometry */}
+    return (
+        <div className="void-section">
 
             <svg
                 className="constellation-svg"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
+                viewBox="0 0 1000 1000"
             >
 
-                {lines.map(([a,b],i)=>{
+                {/* LINES */}
+                {lines.map(([a, b], i) => {
+                    const p1 = pos(a);
+                    const p2 = pos(b);
 
-                    const p1=position(a);
-                    const p2=position(b);
-
-                    return(
-
+                    return (
                         <line
-
                             key={i}
-
                             x1={p1.x}
                             y1={p1.y}
-
                             x2={p2.x}
                             y2={p2.y}
-
                             className="constellation-line"
-
                         />
-
                     );
-
                 })}
+
+                {/* STARS */}
+                {stars.map((s) => (
+                    <g
+                        key={s.id}
+                        transform={`translate(${s.x}, ${s.y})`}
+                        onClick={() => navigate(s.id)}
+                        style={{ cursor: "pointer" }}
+                    >
+
+                        {/* outer glow */}
+                        <circle r="18" fill="rgba(255,220,160,0.12)" />
+
+                        {/* ring */}
+                        <circle r="9" fill="none" stroke="rgba(255,220,160,0.4)" />
+
+                        {/* core */}
+                        <circle r="2.8" fill="#fff" />
+
+                    </g>
+                ))}
 
             </svg>
 
-            {/* CENTER RETICLE */}
-
-            <div
-                className="center-reticle"
-                style={{
-
-                    left:"50%",
-                    top:"54%"
-
-                }}
-            >
-
-                <div className="reticle-core"/>
-
-            </div>
-
-            {/* PROJECT STARS */}
-
-           {stars.map((star) => (
-
-                <button
-                    key={star.id}
-                    className={`project-star ${star.north ? "north" : ""}`}
-                    style={{
-                        left: `${star.x}%`,
-                        top: `${star.y}%`
-                    }}
-                    onClick={() => navigate(star.id)}
-                >
-                
-                    <div className="star-visual">
-                
-                        <span className="star-glow" />
-                        <span className="star-ring" />
-                        <span className="star-core" />
-                
-                    </div>
-                
-                    <div className="star-label">
-                        <h3>{star.title}</h3>
-                        <p>{star.subtitle}</p>
-                    </div>
-                
-                </button>
-
-            ))}
-
         </div>
-
     );
-
 }
