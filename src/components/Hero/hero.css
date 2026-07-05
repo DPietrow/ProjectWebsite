@@ -1,0 +1,89 @@
+
+.hero {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+/* MAIN TEXT BLOCK */
+.hero-content {
+
+    width: 100%;
+    max-width: 760px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 24px; /* CRITICAL: fixes "smushed" feeling */
+
+}
+
+/* KICKER */
+.hero-kicker {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+
+    color: rgba(126, 200, 255, 0.85);
+}
+
+/* TITLE */
+.hero h1 {
+    font-size: clamp(3rem, 6vw, 5.2rem);
+    line-height: 1.05;
+    letter-spacing: -2px;
+
+    color: #F5F7FA;
+}
+
+/* PARAGRAPH */
+.hero p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+
+    color: rgba(170, 180, 192, 0.9);
+
+    max-width: 600px;
+}
+
+/* CTA BUTTON */
+.scroll-indicator {
+
+    margin-top: 16px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 18px;
+
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.03);
+
+    color: #F5F7FA;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    transform: translateY(-2px);
+    border-color: rgba(126,200,255,0.4);
+}
+
+.arrow {
+    opacity: 0.8;
+}
+
+/* HERO LAYOUT SPLIT (optional preview area spacing) */
+.hero {
+    justify-content: space-between;
+    padding: 0 6vw;
+}

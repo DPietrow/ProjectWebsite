@@ -1,0 +1,105 @@
+/* ==========================================================
+   VOID LAYOUT - TEXT STABILITY FIX
+========================================================== */
+
+.void-v3 {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.void-content {
+    width: min(1200px, 92vw);
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 60px;
+
+    z-index: 2;
+}
+
+/* HEADER (FIXED TEXT RENDER) */
+.void-header {
+    text-align:center;
+
+    max-width:760px;
+
+}
+
+.void-kicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+
+    color: #dcb880;
+    letter-spacing: 0.4em;
+    font-size: 0.75rem;
+}
+
+.void-kicker span {
+    width: 60px;
+    height: 1px;
+    background: rgba(220,184,128,0.4);
+}
+
+.void-title {
+    color:white;
+
+    font-size:.9rem;
+
+    letter-spacing:.22em;
+
+    margin-bottom:10px;
+}
+
+.void-header h2{
+
+    color:white;
+
+    font-size:clamp(2rem,3vw,3rem);
+
+    font-weight:300;
+
+    letter-spacing:.08em;
+
+}
+
+.void-subtitle {
+    margin-top: 18px;
+
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+
+    color: rgba(255,255,255,0.65);
+    line-height: 1.7;
+}
+
+/* CONSTELLATION AREA */
+.constellation-wrapper {
+    position: relative;
+    width: min(920px, 92vw);
+    aspect-ratio: 1;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTACT */
+.contact-panel {
+    width: min(1280px, 92vw);
+    margin: 140px auto 0 auto;
+}

@@ -1,0 +1,229 @@
+/* ==========================================================
+   CONSTELLATION CORE (STABLE VISUAL SYSTEM)
+========================================================== */
+.constellation-wrapper {
+    position: relative;
+    width: min(920px, 92vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
+
+/* BOARD LAYER */
+.constellation-board {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* SVG LINES */
+.constellation-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+.constellation-line {
+    fill: none;
+    stroke: rgba(220,184,128,0.45);
+    stroke-width: 0.35;
+    stroke-linecap: round;
+}
+
+/* ORBITS */
+.orbit {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 1px solid rgba(220,184,128,0.08);
+    pointer-events: none;
+}
+
+/* CENTER RETICLE */
+.center-reticle {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+/* ==========================================================
+   ⭐ FIXED STAR SYSTEM (THIS WAS YOUR MAIN BUG)
+========================================================== */
+
+.project-star {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    appearance: none;
+    -webkit-appearance: none;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 10px;
+
+    font: inherit;
+    line-height: 1;
+
+    overflow: visible;
+}
+
+/* wrapper ensures proper layering */
+.star-visual {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: grid;
+    place-items: center;
+}
+
+/* glow should be BACKGROUND ONLY */
+.star-glow {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,220,160,0.22),
+        rgba(255,220,160,0.08) 40%,
+        transparent 70%
+    );
+
+    filter: blur(2px);
+    z-index: 0;
+}
+
+/* ring should be subtle */
+.star-ring {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+
+    border: 1px solid rgba(255,220,160,0.22);
+
+    z-index: 1;
+}
+
+/* ⭐ CORE MUST BE DOMINANT */
+.star-core {
+    position: relative;
+    width: 7px;
+    height: 7px;
+
+    background: #fff;
+    border-radius: 50%;
+
+    z-index: 3;
+
+    box-shadow:
+        0 0 6px #fff,
+        0 0 16px rgba(255,220,160,0.9),
+        0 0 30px rgba(255,200,120,0.35);
+}
+
+/* ✨ add subtle twinkle without turning into blobs */
+.star-core::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,255,255,0.8),
+        transparent 60%
+    );
+
+    opacity: 0.35;
+}
+
+/* LABEL */
+.star-label {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.star-label h3 {
+    color: #fff;
+    font-size: 0.78rem;
+    letter-spacing: 0.28em;
+}
+
+.star-label p {
+    color: rgba(255,255,255,0.55);
+    font-size: 0.72rem;
+}
+
+/* HUD */
+.hud-grid,
+.compass-rose {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+/* FIX GRID THINNING */
+.hud-grid line {
+    stroke: rgba(255,255,255,0.04);
+    stroke-width: 0.15;   /* MUCH thinner */
+    shape-rendering: crispEdges;
+}
+
+/* COMPASS */
+.compass {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+}
+
+.compass span {
+    position: absolute;
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+}
+
+.compass .north { top: 10px; left: 50%; transform: translateX(-50%); }
+.compass .south { bottom: 0px; left: 50%; transform: translateX(-50%); }
+.compass .east { right: 10px; top: 50%; transform: translateY(-50%); }
+.compass .west { left: 10px; top: 50%; transform: translateY(-50%); }
+
+/* STARFIELD */
+.starfield {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.starfield line {
+    stroke: rgba(255,255,255,0.12);
+    stroke-width: 0.25;
+}
