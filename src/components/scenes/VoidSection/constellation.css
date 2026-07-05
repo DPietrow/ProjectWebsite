@@ -84,16 +84,19 @@
 }
 
 .star-title {
-    font-size: 4px;
-    letter-spacing: 0.35em;
     fill: white;
+    font-size: 14px;          /* FIX: readable desktop size */
+    letter-spacing: 0.32em;
+    font-weight: 600;
     text-transform: uppercase;
+    pointer-events: none;
 }
 
 .star-subtitle {
-    font-size: 3px;
-    letter-spacing: 0.1em;
     fill: rgba(255,255,255,0.6);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    pointer-events: none;
 }
 
 /* =========================
@@ -113,12 +116,12 @@
 @media (max-width: 768px) {
 
     .star-title {
-        font-size: 3.5px;
-        letter-spacing: 0.3em;
+        font-size: 11px;
+        letter-spacing: 0.28em;
     }
 
     .star-subtitle {
-        font-size: 3px;
+        font-size: 10px;
     }
 
     .star-label-box {
