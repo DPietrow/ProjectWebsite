@@ -1,0 +1,105 @@
+.constellation-wrapper {
+    position: relative;
+    width: min(920px, 92vw);
+    aspect-ratio: 1;
+    margin: 0 auto;
+}
+
+/* =========================
+   SVG BASE
+========================= */
+
+.constellation-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* =========================
+   GRID LAYER
+========================= */
+
+.hud-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    opacity: 0.22;
+    pointer-events: none;
+}
+
+.hud-grid line {
+    stroke: rgba(255,255,255,0.08);
+    stroke-width: 0.5;
+}
+
+/* =========================
+   CONSTELLATION LINES
+========================= */
+
+.constellation-line {
+    stroke: rgba(220,184,128,0.55);
+    stroke-width: 1;
+    stroke-linecap: round;
+    vector-effect: non-scaling-stroke;
+}
+
+/* =========================
+   STAR CORE (REAL STAR SHAPE)
+========================= */
+
+.star-core {
+    fill: url(#starGrad);
+    filter: drop-shadow(0 0 6px rgba(255,220,160,0.8));
+}
+
+/* glow halo */
+.star-glow {
+    fill: rgba(255,220,160,0.08);
+}
+
+/* ring */
+.star-ring {
+    fill: none;
+    stroke: rgba(255,220,160,0.35);
+    stroke-width: 1;
+}
+
+/* =========================
+   LABELS (FIXED SCALE)
+========================= */
+
+.star-label {
+    text-align: center;
+    transform: scale(0.85);
+    transform-origin: center;
+    pointer-events: none;
+}
+
+.star-title {
+    font-size: 14px;
+    letter-spacing: 0.35em;
+    font-weight: 600;
+    color: white;
+    text-transform: uppercase;
+}
+
+.star-subtitle {
+    font-size: 14px;
+    opacity: 0.55;
+    margin-top: 4px;
+    letter-spacing: 0.1em;
+}
+
+/* =========================
+   INTERACTION
+========================= */
+
+.star-node {
+    cursor: pointer;
+}
+
+.star-core {
+    filter: drop-shadow(0 0 6px rgba(255,220,160,0.8))
+            drop-shadow(0 0 14px rgba(255,200,120,0.4));
+    transition: transform 0.2s ease;
+}

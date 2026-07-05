@@ -1,0 +1,33 @@
+/* ==========================================================
+   VOID BACKGROUND - PURE IMAGE ONLY
+========================================================== */
+
+.void-v3 {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    
+    isolation: isolate;
+}
+
+/* PURE IMAGE LAYER */
+.void-v3::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("/assets/backgrounds/void.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    z-index: 0;
+
+    transform: none; /* NO ZOOM */
+    filter: none;    /* NO COLOR SHIFT */
+}
+
+/* NO OVERLAY AT ALL */
+.void-v3::after {
+    display: none;
+}
