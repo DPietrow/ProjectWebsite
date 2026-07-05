@@ -1,27 +1,43 @@
-import "./scene.css";
+import "./project-section.css";
 
 export default function AresSection() {
     return (
-        <section className="scene ares" id="ares">
+        <section className="project-section" id="ares">
 
-            <div className="scene-inner">
+            <div className="project-container">
 
-                <span className="scene-label">Ares</span>
+                <div className="project-kicker">ARES</div>
 
-                <h2 className="scene-title">
-                    Real Estate ML System
-                </h2>
+                <h2 className="project-title">Real Estate Price Prediction System</h2>
 
-                <p className="scene-text">
-                    A machine learning pipeline that predicts real estate
-                    pricing trends using structured market data, location
-                    features, and historical pricing signals.
+                <p className="project-text">
+                    Ares is a predictive analytics system that estimates real estate valuations using structured property data 
+                    and market signals to uncover pricing trends and investment insights.
                 </p>
 
-                <div className="scene-meta">
-                    <span>🏠 Property valuation modeling</span>
-                    <span>🧠 Gradient boosting regression</span>
-                    <span>📍 Location-driven feature engineering</span>
+                <a className="project-link" href="https://ares-project.com" target="_blank">
+                    ares-project.com
+                </a>
+
+                <div className="project-grid">
+
+                    <div className="project-card">
+                        <h3>Capabilities</h3>
+                        <ul>
+                            <li>Property value prediction models</li>
+                            <li>Market trend feature engineering</li>
+                            <li>Regression-based ML pipelines</li>
+                            <li>Investment insight generation</li>
+                        </ul>
+                    </div>
+
+                    <div className="project-card">
+                        <h3>Focus</h3>
+                        <p>
+                            Data-driven real estate intelligence and scalable valuation modeling systems.
+                        </p>
+                    </div>
+
                 </div>
 
             </div>

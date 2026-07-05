@@ -1,0 +1,64 @@
+.about-section {
+    width: 100%;
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.about-container {
+    width: min(1000px, 92vw);
+    color: white;
+}
+
+.about-kicker {
+    letter-spacing: 0.35em;
+    font-size: 0.75rem;
+    color: rgba(220,184,128,0.9);
+    margin-bottom: 12px;
+}
+
+.about-title {
+    font-size: clamp(2rem, 3vw, 3rem);
+    font-weight: 300;
+    margin-bottom: 24px;
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 18px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.about-card {
+    padding: 20px;
+    border: 1px solid rgba(220,184,128,0.2);
+    background: rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.about-card h3 {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+    color: #fff;
+}
+
+.about-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.about-card li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+}

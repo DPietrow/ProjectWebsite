@@ -1,29 +1,43 @@
-import "./scene.css";
+import "./project-section.css";
 
 export default function ApolloSection() {
     return (
-        <section className="scene apollo" id="apollo">
+        <section className="project-section" id="apollo">
 
-            <div className="scene-inner">
+            <div className="project-container">
 
-                <span className="scene-label">
-                    Apollo
-                </span>
+                <div className="project-kicker">APOLLO</div>
 
-                <h2 className="scene-title">
-                    Enterprise Retrieval-Augmented Generation Assistant
-                </h2>
+                <h2 className="project-title">RAG-Powered Knowledge Assistant</h2>
 
-                <p className="scene-text">
-                    A production-grade AI assistant designed to help
-                    businesses keep track of their PDFs and retrieve data
-                    from them. 
+                <p className="project-text">
+                    Apollo is a production-grade Retrieval-Augmented Generation (RAG) system designed to transform 
+                    unstructured knowledge into an intelligent conversational interface with grounded, source-backed responses.
                 </p>
 
-                <div className="scene-meta">
-                    <span>⚡Complete Full Stack Application</span>
-                    <span>📈 Vector Embedding</span>
-                    <span>🧠 Optimized PDF ingestion pipeline</span>
+                <a className="project-link" href="https://apollo-assistant.com/" target="_blank">
+                    apollo-assistant.com
+                </a>
+
+                <div className="project-grid">
+
+                    <div className="project-card">
+                        <h3>Capabilities</h3>
+                        <ul>
+                            <li>Document ingestion & chunking pipeline</li>
+                            <li>Vector-based semantic search</li>
+                            <li>LLM grounded response generation</li>
+                            <li>Source attribution & citations</li>
+                        </ul>
+                    </div>
+
+                    <div className="project-card">
+                        <h3>Focus</h3>
+                        <p>
+                            Enterprise knowledge systems, internal tooling, and scalable RAG architectures for production environments.
+                        </p>
+                    </div>
+
                 </div>
 
             </div>

@@ -1,27 +1,43 @@
-import "./scene.css";
+import "./project-section.css";
 
 export default function AthenaSection() {
     return (
-        <section className="scene athena"  id="athena">
+        <section className="project-section" id="athena">
 
-            <div className="scene-inner">
+            <div className="project-container">
 
-                <span className="scene-label">Athena</span>
+                <div className="project-kicker">ATHENA</div>
 
-                <h2 className="scene-title">
-                    Future System
-                </h2>
+                <h2 className="project-title">Enterprise Bid Intelligence System</h2>
 
-                <p className="scene-text">
-                    An upcoming AI system currently in design phase,
-                    focused on advanced reasoning, structured knowledge
-                    retrieval, and agent-based workflows.
+                <p className="project-text">
+                    Athena is an enterprise intelligence platform that scrapes and structures procurement data 
+                    to surface contract opportunities and generate AI-assisted bid insights.
                 </p>
 
-                <div className="scene-meta">
-                    <span>🚧 In development</span>
-                    <span>🧠 Agent-based architecture</span>
-                    <span>⚙️ Knowledge graph integration</span>
+                <div className="project-link">
+                    link coming soon
+                </div>
+
+                <div className="project-grid">
+
+                    <div className="project-card">
+                        <h3>Capabilities</h3>
+                        <ul>
+                            <li>Procurement website scraping</li>
+                            <li>Contract structuring pipeline</li>
+                            <li>Bid opportunity classification</li>
+                            <li>AI-generated bid summaries</li>
+                        </ul>
+                    </div>
+
+                    <div className="project-card">
+                        <h3>Focus</h3>
+                        <p>
+                            Enterprise RFP intelligence, automation, and structured opportunity discovery systems.
+                        </p>
+                    </div>
+
                 </div>
 
             </div>

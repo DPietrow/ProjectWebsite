@@ -1,0 +1,80 @@
+.project-section {
+    width: 100%;
+    padding: 120px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.project-container {
+    width: min(1000px, 92vw);
+    color: white;
+}
+
+.project-kicker {
+    letter-spacing: 0.35em;
+    font-size: 2rem;
+    color: rgba(220,184,128,0.9);
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: clamp(1.8rem, 2.5vw, 2.8rem);
+    font-weight: 300;
+    margin-bottom: 18px;
+}
+
+.project-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 18px;
+}
+
+.project-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    color: #dcb880;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.project-card {
+    padding: 20px;
+    border: 1px solid rgba(220,184,128,0.2);
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(10px);
+}
+
+.project-card h3 {
+    font-size: 0.85rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 12px;
+}
+
+.project-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.project-card li {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 8px;
+}
+
+.project-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.6;
+}

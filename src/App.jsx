@@ -6,6 +6,7 @@ import AresSection from "./components/scenes/AresSection";
 import ArtemisSection from "./components/scenes/ArtemisSection";
 import AthenaSection from "./components/scenes/AthenaSection";
 import VoidSection from "./components/scenes/VoidSection/VoidSection";
+import AboutSection from "./components/scenes/AboutSection";
 
 import "./components/scenes/scene.css";
 
@@ -23,6 +24,9 @@ function App() {
 
                     {/* HERO MUST BE FIRST REAL CONTENT */}
                     <Hero />
+                    <section className="spacer" />
+
+                    <AboutSection />
 
                     <section className="spacer" />
 
