@@ -5,7 +5,7 @@ import "./contact.css";
 import "./animations.css";
 
 import StarField from "./StarField";
-import HUDGrid from "./HUDGrid";
+import HUDGrid from "./HudGrid";
 import ContactPanel from "./ContactPanel";
 
 export default function VoidSection() {
