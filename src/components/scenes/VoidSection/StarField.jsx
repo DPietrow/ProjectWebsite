@@ -123,7 +123,13 @@ export default function StarField() {
                     <circle r="8" className="star-ring" />
 
                     {/* LABELS */}
-                    <foreignObject x="-120" y="22" width="240" height="80">
+                    <foreignObject 
+                            x="-20"
+                            y="12"
+                            width="40"
+                            height="20"
+                            className="star-label-box"
+                    >
                         <div className="star-label">
                             <div className="star-title">{s.title}</div>
                             <div className="star-subtitle">{s.subtitle}</div>

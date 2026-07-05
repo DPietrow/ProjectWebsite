@@ -70,24 +70,33 @@
 
 .star-label {
     text-align: center;
-    transform: scale(0.85);
-    transform-origin: center;
-    pointer-events: none;
+    font-family: Inter, system-ui, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    line-height: 1.1;
+
+    transform: translateX(0);
 }
 
 .star-title {
-    font-size: 14px;
-    letter-spacing: 0.35em;
+    font-size: 0.55rem; /* FIX: was 14px = too large */
+    letter-spacing: 0.32em;
     font-weight: 600;
     color: white;
     text-transform: uppercase;
+
+    white-space: nowrap;
 }
 
 .star-subtitle {
-    font-size: 14px;
+    font-size: 0.5rem; /* FIX */
     opacity: 0.55;
-    margin-top: 4px;
-    letter-spacing: 0.1em;
+    margin-top: 2px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
 }
 
 /* =========================
@@ -102,4 +111,21 @@
     filter: drop-shadow(0 0 6px rgba(255,220,160,0.8))
             drop-shadow(0 0 14px rgba(255,200,120,0.4));
     transition: transform 0.2s ease;
+}
+
+@media (max-width: 768px) {
+
+    .star-title {
+        font-size: 0.42rem;
+        letter-spacing: 0.25em;
+    }
+
+    .star-subtitle {
+        font-size: 0.38rem;
+    }
+
+    .star-label-box {
+        width: 34px;
+        height: 16px;
+    }
 }
