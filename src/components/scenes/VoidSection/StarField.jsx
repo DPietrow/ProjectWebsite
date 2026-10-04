@@ -6,7 +6,7 @@ const stars = [
     { id: "aphrodite", x: 780, y: 360, title: "APHRODITE", subtitle: "Energy Forecasting" },
     { id: "ares", x: 170, y: 720, title: "ARES", subtitle: "Real Estate Model" },
     { id: "athena", x: 830, y: 720, title: "ATHENA", subtitle: "Upcoming" },
-    { id: "artemis", x: 500, y: 920, title: "ARTEMIS", subtitle: "Upcoming" }
+    { id: "artemis", x: 500, y: 920, title: "ARTEMIS", subtitle: "Agentic Engineering" }
 ];
 
 const lines = [
