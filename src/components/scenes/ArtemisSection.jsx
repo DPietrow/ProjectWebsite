@@ -8,15 +8,15 @@ export default function ArtemisSection() {
 
                 <div className="project-kicker">ARTEMIS</div>
 
-                <h2 className="project-title">AI Resume Optimization System</h2>
+                <h2 className="project-title">Multi Agent Engineering Team</h2>
 
                 <p className="project-text">
                     Artemis is a personal case study in AI engineering. You describe a change to a small Flask app in plain English; five agents design it, write it, test it and review it; and after you approve, a pull request is opened.
                 </p>
 
-                <div className="project-link" href="https://agentteam.aiengineering.team" target="_blank">
+                <a className="project-link" href="https://agentteam.aiengineering.team" target="_blank">
                     agentteam.aiengineering.team
-                </div>
+                </a>
 
                 <div className="project-grid">
 
