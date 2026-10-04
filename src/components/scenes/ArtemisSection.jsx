@@ -15,7 +15,7 @@ export default function ArtemisSection() {
                 </p>
 
                 <div className="project-link">
-                    https://agentteam.aiengineering.team/#/about
+                    agentteam.aiengineering.team/#/about
                 </div>
 
                 <div className="project-grid">
