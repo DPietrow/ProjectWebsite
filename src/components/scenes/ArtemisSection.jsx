@@ -14,7 +14,7 @@ export default function ArtemisSection() {
                     Artemis is a personal case study in AI engineering. You describe a change to a small Flask app in plain English; five agents design it, write it, test it and review it; and after you approve, a pull request is opened.
                 </p>
 
-                <div className="project-link">
+                <div className="project-link" href="https://agentteam.aiengineering.team/#/about" target="_blank">
                     agentteam.aiengineering.team/#/about
                 </div>
 
